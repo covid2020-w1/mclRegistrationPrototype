@@ -6,8 +6,16 @@ html{
 body{
   background-color: #0059BF;
   margin: 0;
-  color: #222;
+  color: #333;
+  box-sizing: border-box;
+  line-height: 1.5;
 }
+
+input[type="radio"]{
+  accent-color: #333;
+}
+
+
 
 h1, p{
   margin: 0;
@@ -27,7 +35,7 @@ form{
   display: flex;
   flex-direction: column;
   max-width: 409px;
-  background-color: white;
+  background-color: #eee;
   height: 100vh;
   padding: 1em;
 }
@@ -43,16 +51,84 @@ fieldset{
 }
 
 input[type="radio"]{
-  margin: 3px 5px 0 5px;
+  margin: 5px 5px 0 5px;
 }
 
-label{
+.description{
+  font-size: 1.25em;
+  margin-bottom: 2em;
+}
+
+.radio-label{
   border: 1px solid black;
   border-radius: 8px;
   padding: 1em;
   font-size: 1rem;
   display: flex;
   align-items: flex-start;
+}
+
+.generic-label{
+  font-size: 1.25em;
+  margin-bottom: .5em;
+  display: block;
+}
+
+.generic-input{
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 1em;
+  font-size: 1rem;
+}
+
+.row{
+  display: flex;
+  gap: .5em;
+  margin-bottom: 2.5em;
+}
+
+.input{
+  margin-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+input{
+  background-color: #eee;
+  border: 2px solid #333;
+}
+
+.radio-label{
+  border: 2px solid #333;
+}
+
+.radio-label:hover, .generic-input:hover, .radio-label:focus, .generic-input:focus{
+  box-shadow: 0 0 0 1px #333;
+  cursor: pointer;
+}
+
+select{
+  appearance: none;
+  background-image: url('./assets/caret-down-solid-full.svg');
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: right 10px center;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  background-image: url('./assets/calendar-solid-full.svg');
+}
+
+input[type="date"]{
+  background-image: url('./assets/calendar-solid-full.svg');
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-position: right 10px center;
+}
+
+.row .radio-label{
+  flex: 1 0px;
 }
 
 .label-title{
@@ -65,18 +141,55 @@ label{
   display: block;
 }
 
-button{
+.backlink{
+  margin-bottom: 2em;
+}
+
+label:focus{
+  border: 3px solid #333;
+  box-shadow: 0 0 0 2px #333;
+  outline: none;
+}
+
+.next-button{
   background-color: #0059BF;
-  color: white;
+  color: #eee;
   border-radius: 32px;
   border: none;
   font-size: 1rem;
   padding: 1em 0;
+  text-decoration: none;
+  text-align: center;
+}
+
+.next-button:hover{
+  background-color: #004ca4;
+}
+
+select{
+  background-color: #eee;
+}
+
+.data-group{
+  margin-bottom: 2em;
+}
+
+.data{
+  margin-bottom: 1.5em;
+}
+
+.bolded{
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.labelled{
+  text-transform: uppercase;
 }
 
 .container{
   max-width: 800px;
-  background-color: white;
+  background-color: #eee;
   display: flex;
   flex-direction: column;
   align-items: center;
